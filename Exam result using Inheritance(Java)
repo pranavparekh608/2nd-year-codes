@@ -1,0 +1,80 @@
+
+import java.util.Scanner;
+class student
+{
+String name,roll;
+void display()
+{
+System.out.println("NAME OF THE STUDENT" + name);
+System.out.println("Roll No is:"+ roll);
+}
+}
+
+class exam extends student
+{
+int s1[]=new int[6];
+void marks()
+{
+System.out.println("MARKS OBTAINED IN EACH SUBJECT");
+for(int i=0;i<6;i++)
+{
+System.out.println("SUBJECT "+(i+1)+":"+s1[i]);
+}
+}
+}
+
+class result extends exam
+{
+int tot=0;
+int j;
+void calculate()
+{
+for(j=0;j<6;j++)
+{
+tot=tot+s1[j];
+}
+System.out.println("TOTAL MARKS :"+ tot);
+}
+}
+
+class MainResult
+{
+public static void main(String args[])
+{
+int k;
+int m[]=new int[6];
+Scanner in=new Scanner(System.in);
+exam ob=new exam();
+String n,r;
+System.out.println("Give name of the student :");
+n=in.nextLine();
+System.out.println("Give roll of the student");
+r=in.nextLine();
+ob.name=n;
+ob.roll=r;
+result ob1=new result();
+System.out.println("Marks of 6 subjects :");
+
+for(k=0;k<6;k++)
+{
+System.out.println("Subject "+(k+1)+":");
+m[k]=in.nextInt();
+ob1.s1[k]=m[k];
+}
+ob.display();
+ob1.marks();
+ob1.calculate();
+ob.display();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
